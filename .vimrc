@@ -41,6 +41,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdTree'
 Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
@@ -82,6 +83,7 @@ nmap <C-l> :tabnext<CR>
 nmap <C-h> :tabprev<CR>
 set undolevels=100
 set autoindent
+set number
 "set cindent
 set smarttab
 " Status Line {  
@@ -186,6 +188,38 @@ nnoremap @p4a :!p4 add %:e
 nnoremap @p4e :!p4 edit %:e
 nnoremap @p4d :!p4 diff %
 
+
+
+"----------auto append closing character-------------
+
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+
+inoremap        (  ()<Left>
+"inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+
+inoremap [      []<Left>
+inoremap [<CR>  [<CR>]<Esc>O
+inoremap [[     [
+inoremap []     []
+
+inoremap "		""<Left>
+
+
+
+"windows navigation---------------------
+
+nmap <C-Up> :wincmd k<CR>
+nmap <C-Down> :wincmd j<CR>
+nmap <C-Left> :wincmd h<CR>
+nmap <C-Right> :wincmd l<CR>
+"noremap <A-J> <C-W>w
+"noremap <C-K> <C-W>W
+"noremap <C-L> <C-W>l
+"noremap <C-H> <C-W>h
+"""---------------------------------------
 "highlight OverLength ctermbg=blue ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
 
