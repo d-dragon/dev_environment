@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CSCOPE settings for vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
@@ -78,11 +78,12 @@ filetype plugin indent on    " required
 
 " ---------------------------------
 
-imap xx <Esc>
+imap vv <Esc>
 nmap <C-l> :tabnext<CR>
 nmap <C-h> :tabprev<CR>
 set undolevels=100
 set autoindent
+set autoread
 set number
 "set cindent
 set smarttab
@@ -164,15 +165,15 @@ set showcmd
 nnoremap <silent> <C-f> :TagbarToggle<CR>
 
 " Use CTRL-S for saving, also in Insert mode
-command -nargs=0 -bar Update if &modified
-                           \|    if empty(bufname('%'))
-                           \|        browse confirm write
-                           \|    else
-                           \|        confirm write
-                           \|    endif
-                           \|endif
-nnoremap <silent> <C-s> :<C-u>Update<CR>
-inoremap <C-s> <Esc>:Update<CR>
+""command -nargs=0 -bar Update if &modified
+"                           \|    if empty(bufname('%'))
+"                           \|        browse confirm write
+"                           \|    else
+"                           \|        confirm write
+"                           \|    endif
+"                           \|endif
+nnoremap <silent> <S-s> :<C-u>update<CR>
+inoremap sss	<Esc>:update<CR>
 
 " Search for visually selected text
 vnoremap // y/<C-R>"<CR>
@@ -187,6 +188,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nnoremap @p4a :!p4 add %:e
 nnoremap @p4e :!p4 edit %:e
 nnoremap @p4d :!p4 diff %
+
+"-------------map key in insert mode-----------------
+
+"ctrl-d to delete current line
+imap <C-d> <esc>ddi 
+"ctrl-u covert word to uppercase"
+imap <C-u> <esc>vU<esc>i
 
 
 
@@ -206,8 +214,6 @@ inoremap [[     [
 inoremap []     []
 
 inoremap "		""<Left>
-
-
 
 "windows navigation---------------------
 
