@@ -39,6 +39,7 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'scrooloose/nerdTree'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
@@ -99,6 +100,14 @@ set smarttab
         set statusline+=%-14(%l,%c%V%)               " line, character  
         set statusline+=%<%P                         " file position  
 "}
+
+"vim powerline----------------------------
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+" Always show statusline
+set laststatus=2
+" Use 256 colours (Use this setting only if your terminal supports 256
+" colours)
+set t_Co=256
 
 
 "syntastic---------------------------------
@@ -196,7 +205,8 @@ imap <C-d> <esc>ddi
 "ctrl-u covert word to uppercase"
 imap <C-u> <esc>vU<esc>i
 
-
+"ctrl-l go to end of line
+imap <C-l> <Esc>$a
 
 "----------auto append closing character-------------
 
