@@ -27,9 +27,9 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call vundle#begin('~/.vim/bundle/')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -47,6 +47,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'Lokaltog/vim-powerline'
 Plugin 'tpope/vim-obsession'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -105,6 +106,7 @@ set smarttab
 set statusline+=%{ObsessionStatus()}			" Obsession status
 "vim powerline----------------------------
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+"let g:Powerline_symbols = 'fancy'
 " Always show statusline
 set laststatus=2
 " Use 256 colours (Use this setting only if your terminal supports 256
