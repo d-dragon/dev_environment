@@ -47,6 +47,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-obsession'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -88,19 +89,20 @@ set autoread
 set number
 "set cindent
 set smarttab
-" Status Line {  
-        set laststatus=2                             " always show statusbar  
-        set statusline=  
-        set statusline+=[%02n]\                      " buffer number  
-        set statusline+=%-40F\                          " filename   
-        set statusline+=%h%m%r%w                     " status flags  
-        set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type  
-        set statusline+=%=                           " right align remainder  
-        set statusline+=0x%-8B                       " character value  
-        set statusline+=%-14(%l,%c%V%)               " line, character  
-        set statusline+=%<%P                         " file position  
-"}
+""Status Line {  
+""       set laststatus=2                             " always show statusbar  
+""       set statusline+=[%02n]\                      " buffer number  
+""       set statusline+=%-40F\                          " filename   
+""       set statusline+=%h%m%r%w                     " status flags  
+""       set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type  
+""       set statusline+=%=                           " right align remainder  
+""       set statusline+=0x%-8B                       " character value  
+""       set statusline+=%-14(%l,%c%V%)               " line, character  
+""       set statusline+=%<%P                         " file position  
+""	   set statusline+=%{ObsessionStatus()}			" Obsession status
+""}
 
+set statusline+=%{ObsessionStatus()}			" Obsession status
 "vim powerline----------------------------
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 " Always show statusline
@@ -108,7 +110,11 @@ set laststatus=2
 " Use 256 colours (Use this setting only if your terminal supports 256
 " colours)
 set t_Co=256
-
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+    
+set laststatus=2
 
 "syntastic---------------------------------
 set statusline+=%#warningmsg#
@@ -126,7 +132,8 @@ filetype plugin on
 "set rtp+=~/.vim/bundle/YouCompleteMe/autoload/youcompleteme.vim
 "call youcompleteme#Enable()
 let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_dp.py'
+let g:ycm_collect_identifiers_from_tags_files = 0
 let g:ycm_confirm_extra_conf = 0
 "-------------------------------------------
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer', 'for': ['c', 'cpp', 'objc', 'objcpp', 'cs', 'python', 'rust'] }
@@ -154,15 +161,16 @@ set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 syntax enable
 set background=dark
 let g:solarized_termtrans = 1
+let g:solarized_termcolors  = 16
 "colorscheme pablo
-"colorscheme solarized
+colorscheme solarized
 
 set backspace=indent,eol,start
 
 " Pathogen setup
 "call pathogen#infect()
 " vim-poweline setting
-"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 set t_Co=256
 
 set noswapfile
@@ -231,6 +239,9 @@ nmap <C-Up> :wincmd k<CR>
 nmap <C-Down> :wincmd j<CR>
 nmap <C-Left> :wincmd h<CR>
 nmap <C-Right> :wincmd l<CR>
+
+" Press F4 to toggle highlighting on/off, and show current value.
+:noremap <F4> :set hlsearch! hlsearch?<CR>
 "noremap <A-J> <C-W>w
 "noremap <C-K> <C-W>W
 "noremap <C-L> <C-W>l
