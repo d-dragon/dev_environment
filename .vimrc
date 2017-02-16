@@ -163,7 +163,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 syntax enable
 set background=dark
 let g:solarized_termtrans = 1
-let g:solarized_termcolors  = 16
+let g:solarized_termcolors  = 256
 "colorscheme pablo
 colorscheme solarized
 
@@ -202,6 +202,11 @@ autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "--------------------------------------
+
+" Folding 
+autocmd BufReadPre,BufNewFile * :setlocal foldmethod=indent | set foldlevelstart=20 | setlocal foldlevel=20
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
 
 "manage p4 command from Vim
 nnoremap @p4a :!p4 add %:e
