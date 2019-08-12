@@ -1,0 +1,65 @@
+{
+    "csharp.format.enable": false,
+    "[csharp]": {},
+    "diffEditor.renderSideBySide": false,
+    "editor.cursorBlinking": "smooth",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [ "v","v" ],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": [ "z", "z"],
+            "commands": [ ":w"]
+        }
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [ ";", ";" ],
+            "commands": ["cursorLineEnd"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "g", "t"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": [ "g", "<S-t>"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": [ "z", "z"],
+            "commands": [ ":w"]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [ "workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": [
+                "<leader>",
+                "o"
+            ],
+            "commands": [ "workbench.action.gotoSymbol"]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [ "workbench.view.explorer"]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [ "workbench.action.openNextRecentlyUsedEditorInGroup"]
+        }
+    ],
+    "editor.minimap.enabled": false
+}
