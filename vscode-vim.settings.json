@@ -3,62 +3,151 @@
     "[csharp]": {},
     "diffEditor.renderSideBySide": false,
     "editor.cursorBlinking": "smooth",
+    "workbench.statusBar.visible": true,
+    "workbench.editor.showTabs": true,
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "window.menuBarVisibility": "default",
+    "editor.minimap.enabled": false,
     "vim.insertModeKeyBindings": [
         {
-            "before": [ "v","v" ],
-            "after": ["<Esc>"]
+            "before": [
+                "v",
+                "v"
+            ],
+            "after": [
+                "<Esc>"
+            ]
         },
         {
-            "before": [ "z", "z"],
-            "commands": [ ":w"]
+            "before": [
+                "z",
+                "z"
+            ],
+            "commands": [
+                ":w"
+            ]
         }
     ],
     "vim.insertModeKeyBindingsNonRecursive": [
         {
-            "before": [ ";", ";" ],
-            "commands": ["cursorLineEnd"]
+            "before": [
+                ";",
+                ";"
+            ],
+            "commands": [
+                "cursorLineEnd"
+            ]
         }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": [ "g", "t"],
-            "commands": ["workbench.action.nextEditor"]
+            "before": [
+                "g",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
         },
         {
-            "before": [ "g", "<S-t>"],
-            "commands": ["workbench.action.previousEditor"]
+            "before": [
+                "g",
+                "<S-t>"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
         },
         {
-            "before": [ "z", "z"],
-            "commands": [ ":w"]
+            "before": [
+                "z",
+                "z"
+            ],
+            "commands": [
+                ":w"
+            ]
         },
         {
             "before": [
                 "<leader>",
                 "b"
             ],
-            "commands": [ "workbench.action.toggleSidebarVisibility"]
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
         },
         {
             "before": [
                 "<leader>",
                 "o"
             ],
-            "commands": [ "workbench.action.gotoSymbol"]
+            "commands": [
+                "workbench.action.gotoSymbol"
+            ]
         },
         {
             "before": [
                 "<leader>",
                 "e"
             ],
-            "commands": [ "workbench.view.explorer"]
+            "commands": [
+                "workbench.view.explorer"
+            ]
         },
         {
             "before": [
                 "<leader>",
                 "t"
             ],
-            "commands": [ "workbench.action.openNextRecentlyUsedEditorInGroup"]
+            "commands": [
+                "workbench.action.openNextRecentlyUsedEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.closeWindow"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "p"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "1"
+            ],
+            "commands": [
+                "workbench.action.focusFirstEditorGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "2"
+            ],
+            "commands": [
+                "workbench.action.focusSecondEditorGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
         }
     ],
     "editor.minimap.enabled": false
